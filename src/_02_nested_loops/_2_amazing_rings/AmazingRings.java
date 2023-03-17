@@ -36,10 +36,12 @@ import processing.core.PImage;
  * 9. Make this set of rings move in the opposite direction to the other rings
  *    These rings must also "bounce" off the sides of the window.
  */
+
 public class AmazingRings extends PApplet {
     static final int WIDTH = 800;
 	static final int HEIGHT = 600;
 	int x = 150;
+	int X = 650;
 	int speed = 1;
     PImage waldo;
 
@@ -56,30 +58,45 @@ public class AmazingRings extends PApplet {
 
     @Override
     public void draw() {
-    	for(int i = 0; i < 8; i ++) {
+    background(255,255,255);	
+    	for (int i = 0; i < 8; i++) {
     		if(i%2==0) {
-    			fill(255,0,0);
-    		}
-    		else {
-    			fill(0,0,0);
-    		}
+    	
     		ellipse(x,300,((9-i)*30),((9-i)*30));
-    		x+=speed;
-    		
     	}
-    	if(x > WIDTH ){
-			
-				
-				x = -speed;
-				
-				
-			}
-    	else if(x<0) {
-    		x = speed;
+    	else {
+      		
+      		ellipse(x,300,((9-i)*30),((9-i)*30));
+    	}
+    	x += speed;
+    	if (x > 750 || x < 50) {
+    		speed = -speed;
+    	}
     	}
     	
-    }
-
+    	for (int i = 0; i < 8; i++) {
+    		if(i%2==0) {
+   
+    		ellipse(X,300,((9-i)*30),((9-i)*30));
+    	}
+    	else {
+      		
+      		ellipse(X,300,((9-i)*30),((9-i)*30));
+    	}
+    	X -= speed;
+    	if (X > 750 || X < 50) {
+    		speed = -speed;
+    	}
+    	}
+    	
+    	
+    	
+      }
+    	
+    	
+    
+    
+    
     static public void main(String[] args) {
         PApplet.main(AmazingRings.class.getName());
     }
