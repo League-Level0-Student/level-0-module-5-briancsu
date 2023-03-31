@@ -38,66 +38,58 @@ import processing.core.PImage;
  */
 
 public class AmazingRings extends PApplet {
-    static final int WIDTH = 800;
+	static final int WIDTH = 800;
 	static final int HEIGHT = 600;
 	int x = 150;
 	int X = 650;
 	int speed = 1;
-    PImage waldo;
+	PImage waldo;
 
-    @Override
-    public void settings() {
-    	size(WIDTH,HEIGHT);
-    }
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
+	}
 
-    @Override
-    public void setup() {
-    	
-    	noFill();
-    }
+	@Override
+	public void setup() {
 
-    @Override
-    public void draw() {
-    background(255,255,255);	
-    	for (int i = 0; i < 8; i++) {
-    		if(i%2==0) {
-    	
-    		ellipse(x,300,((9-i)*30),((9-i)*30));
-    	}
-    	else {
-      		
-      		ellipse(x,300,((9-i)*30),((9-i)*30));
-    	}
-    	x += speed;
-    	if (x > 750 || x < 50) {
-    		speed = -speed;
-    	}
-    	}
-    	
-    	for (int i = 0; i < 8; i++) {
-    		if(i%2==0) {
-   
-    		ellipse(X,300,((9-i)*30),((9-i)*30));
-    	}
-    	else {
-      		
-      		ellipse(X,300,((9-i)*30),((9-i)*30));
-    	}
-    	X -= speed;
-    	if (X > 750 || X < 50) {
-    		speed = -speed;
-    	}
-    	}
-    	
-    	
-    	
-      }
-    	
-    	
-    
-    
-    
-    static public void main(String[] args) {
-        PApplet.main(AmazingRings.class.getName());
-    }
+		noFill();
+	}
+
+	@Override
+	public void draw() {
+		background(255, 255, 255);
+		for (int i = 0; i < 8; i++) {
+			if (i % 2 == 0) {
+
+				ellipse(x, 300, ((9 - i) * 30), ((9 - i) * 30));
+			} else {
+
+				ellipse(x, 300, ((9 - i) * 30), ((9 - i) * 30));
+			}
+			x += speed;
+			if (x > 750 || x < 50) {
+				speed = -speed;
+			}
+		}
+
+		for (int i = 0; i < 8; i++) {
+			if (i % 2 == 0) {
+
+				ellipse(X, 300, ((9 - i) * 30), ((9 - i) * 30));
+			} else {
+
+				ellipse(X, 300, ((9 - i) * 30), ((9 - i) * 30));
+			}
+			X -= speed;
+			if (X > 750 || X < 50) {
+				speed = -speed;
+			}
+		}
+
+	}
+
+	static public void main(String[] args) {
+		PApplet.main(AmazingRings.class.getName());
+	}
 }
