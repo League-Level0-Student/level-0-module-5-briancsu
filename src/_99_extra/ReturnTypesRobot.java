@@ -12,9 +12,15 @@ public class ReturnTypesRobot {
 	
 	public static void main(String[] args) {
 		//1. Call the crazyMove() method to move the robot
-		
+		crazyMove();
 		//2. Call the getTotalDistanceMethod() to get the distance the robot moved
-		
+		int x = getTotalDistance();
+		if(x > 500) {
+			System.out.println("Wow! That is really far!");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Better luck next time.");
+		}
 		//3. If the distance is greater than 500
 			
 			//4. Tell the user "Wow! That's really far!"
